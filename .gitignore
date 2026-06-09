@@ -33,6 +33,16 @@ design_b64.txt
 .agents/
 .claude/
 .superpowers/
+docs/superpowers/
+
+# Non-source files
+*.xlsx
+mockup*.html
+skills-lock.json
+t2.id
+
+# JPush SDK demo (keep lib only)
+jiguang_sdk/jiguang-demo/
 
 # Editor directories and files
 .vscode/*
