@@ -2,6 +2,18 @@
 
 基于 React 19 + Node.js 的全栈实时聊天应用，支持私聊、群聊、朋友圈、相册、等级系统、管理后台，并提供 Android 原生打包。
 
+**在线 Demo：http://171.80.10.243:5000**
+
+---
+
+## 项目截图
+
+<div align="center">
+  <img src="screenshots/01.png" width="30%" alt="截图1" />
+  <img src="screenshots/02.png" width="30%" alt="截图2" />
+  <img src="screenshots/03.png" width="30%" alt="截图3" />
+</div>
+
 ---
 
 ## 功能特色
