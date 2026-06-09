@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "901205590597",
+    "project_id": "az-chat-4b8ed",
+    "storage_bucket": "az-chat-4b8ed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901205590597:android:15d4bf9437617a21f8992c",
+        "android_client_info": {
+          "package_name": "com.azchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbFOQTeD1_Kbc5tcstkG2ZwE8RwXUsqbY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root {
+    --status-bar-height: 24px;
+  }
+
+  body {
+    @apply font-body bg-cream-100 text-cream-900 leading-relaxed overflow-hidden h-screen w-screen;
+    overscroll-behavior: none;
+  }
+
+  #root {
+    @apply h-full w-full;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button {
+    @apply border-none bg-transparent cursor-pointer text-inherit;
+    font-family: inherit;
+  }
+
+  input, textarea {
+    @apply border-none outline-none bg-transparent text-inherit;
+    font-family: inherit;
+  }
+
+  ul, ol {
+    @apply list-none;
+  }
+
+  img {
+    @apply block max-w-full;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* iOS smooth scrolling for all scrollable containers */
+  .overflow-y-auto,
+  .overflow-y-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  .overflow-x-auto,
+  .overflow-x-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full px-4 py-3 rounded-xl text-sm text-cream-900 placeholder:text-cream-500 transition-all;
+    background: rgba(242, 237, 230, 0.7);
+    border: 1px solid rgba(232, 224, 214, 0.8);
+  }
+  .input-base:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(200, 149, 108, 0.5);
+    box-shadow: 0 0 0 3px rgba(200, 149, 108, 0.1);
+    outline: none;
+  }
+}
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Utility: hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

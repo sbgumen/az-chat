@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AZ Chat</string>
+    <string name="title_activity_main">AZ Chat</string>
+    <string name="package_name">com.azchat</string>
+    <string name="custom_url_scheme">com.azchat</string>
+</resources>
