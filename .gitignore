@@ -43,6 +43,10 @@ t2.id
 
 # JPush SDK demo (keep lib only)
 jiguang_sdk/jiguang-demo/
+jiguang_sdk/doc/
+
+# One-off utility scripts
+scripts/
 
 # Editor directories and files
 .vscode/*
