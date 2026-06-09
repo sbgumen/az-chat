@@ -160,7 +160,7 @@ export function MyGroupsPage() {
                   {joined.map((g, i) => (
                     <motion.button
                       key={g.id}
-                      className="w-full flex items-center gap-3 px-4 pt-[calc(var(--status-bar-height,0px)+12px)] pb-3 border-b border-cream-100 last:border-0 hover:bg-cream-50 active:bg-cream-100 transition-colors text-left"
+                      className="w-full flex items-center gap-3 px-4 py-3 border-b border-cream-100 last:border-0 hover:bg-cream-50 active:bg-cream-100 transition-colors text-left"
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.04 }}

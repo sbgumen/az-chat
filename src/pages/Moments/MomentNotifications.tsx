@@ -253,7 +253,7 @@ export function MomentNotifications() {
             {notifications.map((notif, idx) => (
               <div key={notif.id}>
                 <div
-                  className="flex items-center gap-3 px-4 pt-[calc(var(--status-bar-height,0px)+12px)] pb-3 cursor-pointer active:bg-[#F8F5F2] transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 cursor-pointer active:bg-[#F8F5F2] transition-colors"
                   onClick={() => handleItemClick(notif)}
                 >
                   <SafeImg src={getUrl(notif.from_user.avatar)} alt="" className="w-10 h-10 rounded-full object-cover bg-[#F8F5F2] flex-shrink-0" />

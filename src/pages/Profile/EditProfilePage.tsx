@@ -61,7 +61,7 @@ function DatePicker({ value, onChange }: { value: string; onChange: (v: string) 
               initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }}
               transition={{ type: 'spring', stiffness: 400, damping: 35 }}
             >
-              <div className="flex items-center justify-between px-5 pt-[calc(var(--status-bar-height,0px)+16px)] pb-3 border-b border-cream-100">
+              <div className="flex items-center justify-between px-5 py-3 border-b border-cream-100">
                 <button onClick={() => setShowPicker(false)} className="text-cream-500 text-sm">取消</button>
                 <span className="text-sm font-semibold text-cream-900">选择生日</span>
                 <button onClick={confirm} className="text-warm-500 text-sm font-semibold">确定</button>
@@ -498,7 +498,7 @@ export function EditProfilePage() {
         <div className="bg-white rounded-2xl relative" style={{ boxShadow: '0 1px 3px rgba(45,32,22,0.035)' }}>
           <CardDecoration pattern="waves" color="#D4A574" />
           {/* Nickname */}
-          <div ref={nicknameRef} className={`rounded-t-2xl px-4 pt-[calc(var(--status-bar-height,0px)+12px)] pb-3 border-b border-cream-100 ${hasError('nickname') ? 'bg-red-50/60' : ''}`}>
+          <div ref={nicknameRef} className={`rounded-t-2xl px-4 py-3 border-b border-cream-100 ${hasError('nickname') ? 'bg-red-50/60' : ''}`}>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 shrink-0">
                 {isDirty('nickname') && <span className="w-1 h-1 rounded-full animate-pulse-soft" style={{ background: '#D4A574' }} />}
@@ -516,7 +516,7 @@ export function EditProfilePage() {
           </div>
 
           {/* Gender - Color Drop */}
-          <div className="px-4 pt-[calc(var(--status-bar-height,0px)+12px)] pb-3 border-b border-cream-100">
+          <div className="px-4 py-3 border-b border-cream-100">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 shrink-0">
                 {isDirty('gender') && <span className="w-1 h-1 rounded-full animate-pulse-soft" style={{ background: '#D4A574' }} />}

@@ -275,7 +275,7 @@ export function SearchPage() {
                     {contacts.map((c, i) => (
                       <motion.button
                         key={c.id}
-                        className="flex items-center gap-3 px-4 pt-[calc(var(--status-bar-height,0px)+12px)] pb-3 text-left transition-colors"
+                        className="flex items-center gap-3 px-4 py-3 text-left transition-colors"
                         style={{ background: 'transparent' }}
                         initial={{ opacity: 0, x: -12 }}
                         animate={{ opacity: 1, x: 0 }}
