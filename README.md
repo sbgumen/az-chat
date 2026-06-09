@@ -1,8 +1,45 @@
 # AZ-Chat v1.1.1
 
-基于 React 19 + Node.js 的全栈实时聊天应用，支持私聊、群聊、朋友圈、相册、等级系统、管理后台，并提供 Android 原生打包。
+<div align="center">
 
-**在线 Demo：http://171.80.10.243:5000**
+![Version](https://img.shields.io/badge/version-1.1.1-blue)
+![License](https://img.shields.io/badge/license-Proprietary-red)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=nodedotjs)
+![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)
+![Android](https://img.shields.io/badge/Android-Capacitor-3DDC84?logo=android)
+
+**全栈实时通讯应用 — 私聊 · 群聊 · 朋友圈 · 相册 · 等级系统 · 管理后台**
+
+[在线 Demo](http://171.80.10.243:5000) · [后端仓库](https://github.com/sbgumen/az-chat-backend) · [Release 下载](https://github.com/sbgumen/az-chat/releases)
+
+</div>
+
+---
+
+## 目录
+
+- [项目截图](#项目截图)
+- [功能特色](#功能特色)
+  - [多登录方式系统](#多登录方式系统-v110-新增)
+  - [即时通讯](#即时通讯)
+  - [社交系统](#社交系统)
+  - [等级与金币](#等级与金币)
+  - [视觉效果](#视觉效果)
+  - [安全防护](#安全防护-v110-加强)
+  - [管理后台](#管理后台-v110-增强)
+  - [账号安全](#账号安全)
+  - [推送通知](#推送通知)
+- [技术栈](#技术栈)
+- [项目结构](#项目结构)
+- [快速开始](#快速开始)
+- [Android App 打包](#android-app-打包)
+- [生产部署](#生产部署)
+- [应用配置管理](#应用配置管理)
+- [API 概览](#api-概览)
+- [版本迭代](#版本迭代)
+- [开发路线图](#开发路线图)
 
 ---
 
@@ -82,24 +119,23 @@
 
 ## 技术栈
 
-| 层级 | 技术 |
-|------|------|
-| 前端框架 | React 19 + TypeScript |
-| 构建工具 | Vite 8 |
-| 样式 | Tailwind CSS 3 + Framer Motion + GSAP |
-| 实时通信 | Socket.IO 4 |
-| HTTP | Axios |
-| 路由 | React Router DOM 7 |
-| 移动端 | Capacitor 7（Android） |
-| 推送 | 极光推送 JPush |
-| XSS 防护 | DOMPurify |
-| 图片压缩 | browser-image-compression |
-| 后端 | Node.js + Express 4 |
-| 数据库 | MySQL 8 (mysql2/promise) |
-| 认证 | JWT 双令牌 + bcrypt |
-| 加密 | AES-256-GCM（消息/金币/经验/手机号/邮箱/SMTP授权码） |
-| 邮件 | Nodemailer（SMTP 发送邮箱验证码） |
-| 图片压缩 | Sharp（服务端 Logo 压缩） |
+| 层级 | 技术 | 说明 |
+|------|------|------|
+| 前端框架 | React 19 + TypeScript | 类型安全，组件化开发 |
+| 构建工具 | Vite 8 | 极速 HMR，按需编译 |
+| 样式方案 | Tailwind CSS 3 + Framer Motion + GSAP | 原子化 CSS + 动效引擎 |
+| 实时通信 | Socket.IO 4 | WebSocket + polling 降级 |
+| HTTP 客户端 | Axios | 请求/响应拦截，自动刷新 Token |
+| 路由 | React Router DOM 7 | SPA 路由，嵌套布局 |
+| 移动端 | Capacitor 7（Android） | WebView 原生打包，插件生态 |
+| 推送通知 | 极光推送 JPush | 厂商通道（华为/小米/OPPO/vivo 等） |
+| XSS 防护 | DOMPurify | 富文本内容过滤 |
+| 图片处理 | browser-image-compression + Sharp | 前端压缩 + 服务端压缩 |
+| 后端 | Node.js + Express 4 | 异步非阻塞，高并发 |
+| 数据库 | MySQL 8 (mysql2/promise) | 连接池 + 原子事务 |
+| 认证 | JWT 双令牌 + bcrypt | Access Token 2h + Refresh Token 7d |
+| 加密 | AES-256-GCM | 消息/金币/手机号/邮箱/SMTP 授权码 |
+| 邮件 | Nodemailer | SMTP 发送邮箱验证码 |
 
 ---
 
@@ -123,10 +159,9 @@ AZ-chat/                    # 前端
 │   ├── context/            # AuthContext + OnlineStatusContext
 │   └── styles/             # 全局样式
 ├── android/                # Capacitor Android 工程
-│   ├── variables.gradle    # 应用配置（AppKey、包名）
-│   └── app/src/main/java/  # MainActivity / JPush 推送
+├── screenshots/            # 项目截图
 ├── index.html              # 入口 HTML
-└── .env                    # 后端地址配置
+└── .env.example            # 环境变量模板
 
 AZ-chat-后端/               # 后端
 ├── routes/                 # API 路由（auth/user/messages/contacts/groups/moments/admin 等）
@@ -146,7 +181,7 @@ AZ-chat-后端/               # 后端
 
 - Node.js 18+
 - MySQL 8+
-- Nodemailer（可选，邮箱验证码功能需要 `npm install nodemailer`）
+- Nodemailer（可选，邮箱验证码功能需要）
 
 ### 1. 启动后端
 
@@ -175,32 +210,6 @@ npm install
 npm run dev
 # 前端运行在 http://localhost:5000
 ```
-
----
-
-## 应用配置管理
-
-所有应用级配置统一在项目根目录 `app.config.json`：
-
-```json
-{
-  "appName": "AZ Chat",         // 应用名称（同步到 APK/网页标题）
-  "appId": "com.azchat",        // Android 包名
-  "version": "1.1.0",          // 版本号
-  "versionCode": 2,            // Android 版本码（整数，每次发版 +1）
-  "description": "连接你我，温暖每一刻"
-}
-```
-
-修改后运行同步命令，自动更新所有配置文件：
-
-```bash
-npm run sync-config
-```
-
-**同步目标文件：** `capacitor.config.ts` → `strings.xml` → `build.gradle` → `package.json` → `index.html`
-
-> 注意：包名 (`appId`) 修改后需要重新 `npx cap sync android`，部分 Android 原生文件不会自动更新。
 
 ---
 
@@ -261,6 +270,30 @@ server {
 
 ---
 
+## 应用配置管理
+
+所有应用级配置统一在项目根目录 `app.config.json`：
+
+```json
+{
+  "appName": "AZ Chat",
+  "appId": "com.azchat",
+  "version": "1.1.1",
+  "versionCode": 3,
+  "description": "连接你我，温暖每一刻"
+}
+```
+
+修改后运行同步命令，自动更新所有配置文件：
+
+```bash
+npm run sync-config
+```
+
+**同步目标文件：** `capacitor.config.ts` → `strings.xml` → `build.gradle` → `package.json` → `index.html`
+
+---
+
 ## API 概览
 
 ### 认证
@@ -273,6 +306,16 @@ server {
 | POST | /api/auth/register-password | 纯密码注册（昵称+密码生成ID） |
 | GET | /api/auth/check-email | 检查邮箱是否已注册 |
 | POST | /api/auth/send-email-code | 发送邮箱验证码 |
+
+### 用户
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | /api/user/profile | 获取个人信息 |
+| PUT | /api/user/profile | 更新个人信息 |
+| GET | /api/user/search | 搜索用户 |
+| POST | /api/user/follow | 关注用户 |
+| POST | /api/user/unfollow | 取消关注 |
+| GET | /api/user/level | 等级信息 |
 
 ### 管理
 | 方法 | 路径 | 说明 |
@@ -314,3 +357,50 @@ server {
 ### v1.0.0
 - 初始版本，支持手机号验证码登录和 ID+密码登录
 - 私聊/群聊/朋友圈/相册/等级系统/管理后台
+
+---
+
+## 开发路线图
+
+### v1.2.0 — 通信增强（计划中）
+
+- [ ] **语音消息**：录音发送 + 波形可视化播放
+- [ ] **视频消息**：拍摄/上传短视频，内联播放
+- [ ] **文件传输**：支持 PDF/Word/压缩包等文件类型
+- [ ] **位置分享**：地图选点 + 位置卡片展示
+- [ ] **消息转发**：单条/多条消息转发到其他会话
+- [ ] **聊天记录导出**：支持导出为文本/HTML 格式
+- [ ] **消息搜索优化**：全文搜索 + 按日期/类型筛选
+- [ ] **正在输入状态**：私聊/群聊显示对方正在输入
+- [ ] **消息已读回执**：显示消息送达/已读状态
+
+### v1.3.0 — 社交深化（计划中）
+
+- [ ] **语音/视频通话**：WebRTC 一对一音视频通话
+- [ ] **群语音/视频通话**：多人实时音视频会议
+- [ ] **表情商店**：自定义表情包上传与管理
+- [ ] **朋友圈视频**：支持发布短视频动态
+- [ ] **朋友圈可见范围**：分组可见 + 指定好友不可见
+- [ ] **@好友到朋友圈**：动态中 @ 提及好友
+- [ ] **附近的人**：基于地理位置发现新朋友
+- [ ] **扫一扫**：扫码添加好友 / 加入群聊
+
+### v1.4.0 — 平台扩展（计划中）
+
+- [ ] **iOS 支持**：Capacitor iOS 原生打包 + 极光推送 iOS 适配
+- [ ] **桌面端**：Electron 桌面应用（Windows/macOS）
+- [ ] **PWA 支持**：Service Worker 离线缓存，添加到桌面
+- [ ] **平板适配**：Pad 端横屏布局 + 分栏视图
+- [ ] **多端消息同步**：登录多个设备，消息实时同步
+- [ ] **暗黑模式**：全局自动/手动暗黑主题切换
+
+### v2.0.0 — 生态构建（远期规划）
+
+- [ ] **AI 智能助手**：ChatBot 集成，智能回复建议、消息摘要
+- [ ] **红包系统**：个人红包 / 群拼手气红包
+- [ ] **支付集成**：钱包充值、金币交易、打赏功能
+- [ ] **小程序平台**：开放 API，第三方小程序接入
+- [ ] **频道/广播**：一对多内容推送，订阅制频道
+- [ ] **内容审核**：AI 自动审核敏感内容（图片/文字/视频）
+- [ ] **数据大屏**：管理后台可视化数据看板
+- [ ] **国际化**：多语言支持（英文 / 日文 / 韩文）
