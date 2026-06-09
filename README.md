@@ -46,9 +46,10 @@
 ## 项目截图
 
 <div align="center">
-  <img src="screenshots/01.png" width="30%" alt="截图1" />
-  <img src="screenshots/02.png" width="30%" alt="截图2" />
-  <img src="screenshots/03.png" width="30%" alt="截图3" />
+  <img src="screenshots/01.jpg" width="45%" alt="截图1" />&nbsp;
+  <img src="screenshots/02.jpg" width="45%" alt="截图2" />
+  <img src="screenshots/03.jpg" width="45%" alt="截图3" />&nbsp;
+  <img src="screenshots/04.jpg" width="45%" alt="截图4" />
 </div>
 
 ---
