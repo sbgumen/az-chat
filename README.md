@@ -50,13 +50,10 @@
 ## 项目截图
 
 <div align="center">
-  <img src="screenshots/01.jpg" width="30%" alt="截图1" />&nbsp;&nbsp;
-  <img src="screenshots/02.jpg" width="30%" alt="截图2" />&nbsp;&nbsp;
-  <img src="screenshots/03.jpg" width="30%" alt="截图3" />
-</div>
-<br>
-<div align="center">
-  <img src="screenshots/04.jpg" width="45%" alt="截图4" />
+  <img src="screenshots/01.jpg" width="240" alt="截图1" />&nbsp;
+  <img src="screenshots/02.jpg" width="240" alt="截图2" />&nbsp;
+  <img src="screenshots/03.jpg" width="240" alt="截图3" />&nbsp;
+  <img src="screenshots/04.jpg" width="240" alt="截图4" />
 </div>
 
 ---
